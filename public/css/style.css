@@ -10,9 +10,9 @@ body {
   background-color: black;
 }
 
-#resultado {
-  color: white;
-  font-weight: bold;
+.title img {
+    width: 400px;
+    max-width: 400px;
 }
 
 .swiper {
@@ -29,6 +29,11 @@ body {
   height: auto;
   object-fit: contain;
 }
+
+#resultado {
+    color: white;
+    font-weight: bold;
+  }
 
 .love-message {
   padding: 15px;
