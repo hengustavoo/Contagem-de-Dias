@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Diferença de Datas</title>
-</head>
-<body>
-  <h1>Tempo desde 01/03/2024 00:00</h1>
-  <p id="resultado"></p>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gustavo & Mariana</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./imgs/1.jpeg" alt="Imagem 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./imgs/2.jpeg" alt="Imagem 2" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./imgs/3.jpeg" alt="Imagem 3" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./imgs/4.jpeg" alt="Imagem 3" />
+        </div>
+      </div>
 
-  <script>
-    const dataInicial = new Date("2024-03-01T00:00:00");
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
 
-    function atualizarTempo() {
-      const agora = new Date();
-      const diffMs = agora - dataInicial;
+      <div class="swiper-pagination"></div>
+    </div>
 
-      const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diffMs % (1000 * 60)) / 1000);
+    <div class="result">
+      <p id="resultado"></p>
+    </div>
+    <div class="love-message">
+      <h2>Para Mariana ❤️</h2>
+      <span>Sempre que você entrar aqui, quero que lembre de uma coisa: eu te amo. Mais do que todas as palavras podem dizer, mais do que todas as estrelas do céu podem contar.Você mudou a minha vida de uma forma que eu nem sabia ser possível. Trouxe luz aos meus dias, significado aos meus passos e um amor tão grande que até o universo parece pequeno perto do que sinto por você.Cada sorriso seu é meu lugar favorito. Cada abraço seu é meu porto seguro. E cada "eu te amo" seu é a certeza de que eu sou a pessoa mais sortuda do mundo.Este site é só mais um cantinho onde eu guardo o que sinto: você é a minha vida, meu amor, meu tudo. E sempre que estiver aqui, saiba que meu coração bate por você, hoje e em todos os amanhãs que virão.<span #ilovu>TE AMO INFINITO + 1.</span></span>
+    </div>
 
-      document.getElementById("resultado").textContent = 
-        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
-    }
-
-    // Atualiza a cada segundo
-    setInterval(atualizarTempo, 1000);
-    atualizarTempo(); // Chama uma vez no início pra não esperar 1s
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/carrossel.js"></script>
+  </body>
 </html>

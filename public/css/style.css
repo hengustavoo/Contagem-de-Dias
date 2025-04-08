@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,500&display=swap");
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+#resultado {
+  color: white;
+  font-weight: bold;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.love-message {
+  padding: 15px;
+  width: 800px;
+  max-width: 400px;
+  color: white;
+}
+
+.love-message > h2 {
+  margin-left: 25px;
+}
+
+.love-message > span {
+  margin: 0px 40px;
+}
