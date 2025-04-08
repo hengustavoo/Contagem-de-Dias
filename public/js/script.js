@@ -12,7 +12,7 @@ function atualizarTempo() {
 
   document.getElementById(
     "resultado"
-  ).textContent = `${anos} ano(s), ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+  ).innerHTML = `${anos} ano(s), ${dias} dias, ${horas} horas, <br>${minutos} minutos e ${segundos} segundos`;
 }
 
 setInterval(atualizarTempo, 1000);
