@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gustavo & Mariana</title>
-    <link rel="icon" href="./imgs/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./imgs/favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="title">
-      <img src="./imgs/Title.png" alt="">
+      <img src="./imgs/Title.png" alt="" />
     </div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
@@ -46,9 +46,75 @@
     </div>
     <div class="love-message">
       <h2>Para Mariana ❤️</h2>
-      <span>Sempre que você entrar aqui, quero que lembre de uma coisa: Eu te amo. Mais do que todas as palavras podem dizer, mais do que todas as estrelas do céu podem contar. Você mudou a minha vida de uma forma que eu nem sabia ser possível. Trouxe luz aos meus dias, significado aos meus passos e um amor tão grande que até o universo parece pequeno perto do que sinto por você. Cada sorriso seu é meu lugar favorito. Cada abraço seu é meu porto seguro. E cada "eu te amo" seu é a certeza de que eu sou a pessoa mais sortuda do mundo. Este site é só mais um cantinho onde eu guardo o que sinto: você é a minha vida, meu amor, meu tudo. E sempre que estiver aqui, saiba que meu coração bate por você, hoje e em todos os amanhãs que virão. TE AMO INFINITO + 1.</span>
+      <span
+        >Sempre que você entrar aqui, quero que lembre de uma coisa: Eu te amo.
+        Mais do que todas as palavras podem dizer, mais do que todas as estrelas
+        do céu podem contar. Você mudou a minha vida de uma forma que eu nem
+        sabia ser possível. Trouxe luz aos meus dias, significado aos meus
+        passos e um amor tão grande que até o universo parece pequeno perto do
+        que sinto por você. Cada sorriso seu é meu lugar favorito. Cada abraço
+        seu é meu porto seguro. E cada "eu te amo" seu é a certeza de que eu sou
+        a pessoa mais sortuda do mundo. Este site é só mais um cantinho onde eu
+        guardo o que sinto: você é a minha vida, meu amor, meu tudo. E sempre
+        que estiver aqui, saiba que meu coração bate por você, hoje e em todos
+        os amanhãs que virão. TE AMO INFINITO + 1.</span
+      >
     </div>
 
+    <div class="audio-player">
+      <h3>Mirros</h3>
+      <p>Justin Timberlake</p>
+
+      <audio id="audio" src="./music/Justin Timberlake - Mirrors.mp3"></audio>
+
+      <div class="controls">
+        <button id="playBtn">▶</button>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress" id="progress"></div>
+        </div>
+        <span class="time" id="time">0:00</span>
+      </div>
+    </div>
+
+    <script>
+      const audio = document.getElementById("audio");
+      const playBtn = document.getElementById("playBtn");
+      const progress = document.getElementById("progress");
+      const progressContainer = document.getElementById("progressContainer");
+      const timeDisplay = document.getElementById("time");
+
+      // Play/Pause
+      playBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          playBtn.textContent = "❚❚";
+        } else {
+          audio.pause();
+          playBtn.textContent = "▶";
+        }
+      });
+
+      // Atualizar barra de progresso
+      audio.addEventListener("timeupdate", () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = `${percent}%`;
+
+        // Atualizar tempo
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        timeDisplay.textContent = `${minutes}:${
+          seconds < 10 ? "0" : ""
+        }${seconds}`;
+      });
+
+      // Clicar na barra de progresso
+      progressContainer.addEventListener("click", (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+        audio.currentTime = (clickX / width) * duration;
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/carrossel.js"></script>
   </body>
